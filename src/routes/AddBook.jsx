@@ -13,9 +13,9 @@ import useAxios from "../services/useAxios";
 import { bookGenres } from "../genres";
 import { Stack, Typography } from "@mui/material";
 
-/* to expand the collection of books.JSON */
+/* To add new books to the books.json */
 function AddBook() {
-  const { alert, post } = useAxios("http://localhost:3001");
+  const { alert, post } = useAxios("http://localhost:3000");
   const [rateValue, setRateValue] = useState(3);
   const [book, setBook] = useState({
     author: "",
@@ -26,7 +26,7 @@ function AddBook() {
     end: null,
     stars: null,
   });
-  /* to alter the book's genre. Along with other book-related details, it will determine the genre based on the input value. */
+  /* To change the genre of the book. It will take the value from the input and set the book genre along with other information about the book. */
   const genreChangeHandler = (event) => {
     const { value } = event.target;
     setBook({
@@ -34,7 +34,7 @@ function AddBook() {
       genres: typeof value === "string" ? value.split(",") : value,
     });
   };
-  /* The book's ratings will be added using this function. Along with other details about the book, I will also take the input value and set it to the stars. */
+  /* This function will add the ratings of the book. I will also take the value from the input and set to the stars along with other information about the book. */
 
   const rateChangeHandler = (event) => {
     const { value } = event.target;
@@ -44,7 +44,7 @@ function AddBook() {
     });
   };
 
-  /* The primary purpose of adding a new book is this. After the form has been submitted, it will take the input values and save them in the setBook. */
+  /* This is the main function to add a new book. Upon submitting the form, it will take the inputs from the values of the inputs and store those values inside setBook. */
   const addBookHandler = (e) => {
     const { name, value, checked, type } = e.target;
     if (type === "checkbox" && name === "completed") {
@@ -54,7 +54,7 @@ function AddBook() {
     }
   };
 
-  /* The new book will be added to the books via this postHandler function.JSON. */
+  /* This postHandler function will add the new book to the books.json. */
   function postHandler() {
     post("books", book);
   }
@@ -97,7 +97,7 @@ function AddBook() {
           onChange={genreChangeHandler}
           input={<OutlinedInput label="Genre" />}
         >
-          {/* using the genres.js file to map the genre name. */}
+          {/* Mapping the genre name from the genres.js file. */}
           {bookGenres.map((name) => (
             <MenuItem key={name} value={name}>
               {name}
