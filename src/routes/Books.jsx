@@ -27,7 +27,7 @@ function Books() {
     get("books");
   }, []);
 
-  // Update filtered books whenever the original books or search query changes
+  // Update filtered books whenever search query changes
   useEffect(() => {
     if (books) {
       const lowerCaseSearch = search.toLowerCase();
@@ -47,7 +47,14 @@ function Books() {
     <Box sx={{ mx: "auto", p: 2 }}>
       <Paper
         component="form"
-        sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 400 }}
+        sx={{
+          p: "2px 4px",
+          display: "flex",
+          alignItems: "center",
+          width: 400,
+          mb: 5,
+          mx: "auto",
+        }}
       >
         <InputBase
           sx={{ ml: 1, flex: 1 }}

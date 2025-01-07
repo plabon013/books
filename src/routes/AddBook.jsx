@@ -16,7 +16,7 @@ import { Stack, Typography } from "@mui/material";
 /* To add new books to the books.json */
 function AddBook() {
   const { alert, post } = useAxios("http://localhost:3000");
-  const [rateValue, setRateValue] = useState(3);
+  const [rateValue, setRateValue] = useState();
   const [book, setBook] = useState({
     author: "",
     name: "",
@@ -63,7 +63,7 @@ function AddBook() {
     <form onChange={addBookHandler} onSubmit={postHandler}>
       <Stack
         spacing={1}
-        alignItems="stretch"
+        /* alignItems="stretch" */
         sx={{ my: 2, mx: "auto", width: "25%" }}
       >
         {alert.show && <Alert severity={alert.type}>{alert.message}</Alert>}
@@ -113,14 +113,14 @@ function AddBook() {
 
         <DateField name="start" label="Started" />
         <DateField name="end" label="Finished" disabled={!book.completed} />
-        <Stack spacing={1}>
+        <Stack>
           <Rating
-            name="stars"
+            sx={{ mx: "auto" }}
+            name="simple-controlled"
             value={rateValue}
             onClick={rateChangeHandler}
-            size="large"
             onChange={(event, newValue) => {
-              setRateValue(newValue);
+              setValue(newValue);
             }}
           />
         </Stack>
