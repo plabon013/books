@@ -68,6 +68,32 @@
       "stars": "5",
       "id": 5,
       "img": "https://www.davidjpphillips.com/wp-content/uploads/2023/08/highonlife_copy-195x300.jpg"
+    },
+    {
+      "author": "none",
+      "name": "Public domain book",
+      "genres": [
+        "Business"
+      ],
+      "completed": true,
+      "start": "10/12/4",
+      "end": "12/01/5",
+      "img": "https://i0.wp.com/ebookfriendly.com/wp-content/uploads/2022/12/Best-free-public-domain-sites-ebooks-audiobooks.jpg?resize=1200%2C1200&ssl=1",
+      "simple-controlled": "4",
+      "id": 6
+    },
+    {
+      "author": "none",
+      "name": "Color and its application to printing",
+      "genres": [
+        "Non-Fiction"
+      ],
+      "completed": true,
+      "start": "04/24/4",
+      "end": "05/30/4",
+      "stars": "4",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJCIaDrdJc_fWceZpbg2FyNwYsZjLG44AsQQ&s",
+      "id": 7
     }
   ]
 }
